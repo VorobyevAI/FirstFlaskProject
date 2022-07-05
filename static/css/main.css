@@ -1,0 +1,9 @@
+.flash {padding: 10px;}
+.flash.norm {
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+.flash.nenorm {
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
+}

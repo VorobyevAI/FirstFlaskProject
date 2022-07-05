@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 >Регистрация</h2>
+    {% for ctg, msg in get_flashed_messages(True) %}
+    <div class="flash {{ctg}}">{{msg}} </div>
+    {% endfor %}
+
+    <form action="/regist" method="post">
+        <input type="text" name="username" id="username" class="form-control" placeholder="Введите почту"><br>
+        <p> </p>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Введите пароль"><br>
+
+        <input  type="submit" class=" btn btn-success " value="Отправить" >
+
+    </form>
+</div>
+{% endblock %}
