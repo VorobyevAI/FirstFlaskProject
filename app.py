@@ -43,12 +43,24 @@ class Feedback(db.Model):
 @app.route('/index')
 @app.route('/')
 def index():
-    return render_template('index.html')
+    user = Users.query.order_by(Users.username.desc()).all()
+    return render_template('index.html', user=user)
 
 
-@app.route('/about')
+@app.route('/about/<int:id>/delete')
+def user_del(id):
+    user = Users.query.get_or_404(id)
+    try:
+        db.session.delete(user)
+        db.session.commit()
+        return redirect('/about')
+    except:
+        return 'При удаление пользователя'
+
+
+@app.route('/about', )
 def about():
-    user =  Users.query.order_by(Users.username.desc()).all()
+    user = Users.query.order_by(Users.username.desc()).all()
     return render_template('about.html', user=user)
 
 
