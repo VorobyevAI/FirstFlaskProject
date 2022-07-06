@@ -7,3 +7,27 @@
     border: 1px solid #FF4343;
     background: #FF9C9C;
 }
+.cart {
+    height: auto;
+    padding: 25px 0;
+    margin-left: 25%;
+    padding-top: 4%;
+    line-height: 1.25;
+    transition: 0.5s;
+    position: relative;
+    display: inline;
+}
+
+h1.block2 {
+    color: #404040;
+    font-size: 32px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+}
+.social{
+position: fixed;
+ top: 20px;
+ right: 0;
+ }

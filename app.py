@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, abort, flash
 from flask_sqlalchemy import SQLAlchemy
+from  datetime import datetime
 
 
 app = Flask(__name__)
@@ -9,6 +10,16 @@ app.config['SECRET_KEY'] = 'fa34wq23dq45dq5q3wdw32'
 db = SQLAlchemy(app)
 ROLE_USER = 0
 ROLE_ADMIN = 1
+
+
+class Data(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    posts = db.Column(db.String(30), nullable=False)
+    date = db.Column(db.DateTime, default=datetime.today())
+
+
+    def __repr__(self):
+        return '<Users %r>' % (self.id)
 
 
 class Users(db.Model):
